@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Medio Boleto</title>
+  <link rel="shortcut icon" href="ico.png" type="image/x-icon">
+  <meta name="theme-color" content="#0960a9" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400&display=swap" rel="stylesheet">  
+</head>
+<body>
+
+  <img class="header" src="header.png" alt="Header">
+  <img src="top.png" alt="Fondo">
+  <h1 id="date"></h1>
+  <img src="bottom.png" alt="Fondo">
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      font-family: Roboto;
+      font-weight: 400;
+      font-size: 0;
+    }
+    img{
+      width: 100%;
+    }
+    .header{
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    h1{
+      background: #ededed;
+      line-height: 1;
+      font-size: 36px;
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+
+  <script>
+    var date = new Date();
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+    if (month < 10) {
+      document.getElementById('date').innerHTML = "".concat(day, "/0").concat(month, "/").concat(year);
+    } else {
+      document.getElementById('date').innerHTML = "".concat(day, "/").concat(month, "/").concat(year);
+    }
+  </script>
+</body>
+</html>
